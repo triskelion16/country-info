@@ -1,4 +1,4 @@
-package pl.triskelion.countryinfo.entity;
+package pl.triskelion.countryinfo.domain;
 
 import javax.persistence.*;
 
@@ -52,9 +52,7 @@ public class Country {
         this.lifeExpectancy = lifeExpectancy;
     }
 
-    public String getLanguage() {
-        return language;
-    }
+    public String getLanguage() { return language; }
     public void setLanguage(String language) {
         this.language = language;
     }

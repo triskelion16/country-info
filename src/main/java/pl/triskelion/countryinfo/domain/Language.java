@@ -1,4 +1,4 @@
-package pl.triskelion.countryinfo.entity;
+package pl.triskelion.countryinfo.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -2,7 +2,7 @@ package pl.triskelion.countryinfo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.triskelion.countryinfo.entity.Country;
+import pl.triskelion.countryinfo.domain.Country;
 import pl.triskelion.countryinfo.repository.CountryRepository;
 import pl.triskelion.countryinfo.repository.LanguageRepository;
 
@@ -14,9 +14,10 @@ public class CountryService {
     LanguageRepository languageRepository;
 
     public Country getCountry(String code) {
-        String language = languageRepository.findAllByCode(code).get(0).getLanguage();
+        String codeUpperCase = code.toUpperCase();
+        String language = languageRepository.findAllByCode(codeUpperCase).get(0).getLanguage();
 
-        Country country = countryRepository.findOneByCode(code);
+        Country country = countryRepository.findOneByCode(codeUpperCase);
         country.setLanguage(language);
 
         return country;
